@@ -23,3 +23,5 @@ class SimpleIpValidatorTest(TestCase):
         self.assertFalse(is_valid_ip('192.168.1.300'))
         self.assertFalse(is_valid_ip('192.168.1.2.3'))
         self.assertFalse(is_valid_ip('192.168.1.2.'))
+        self.assertFalse(is_valid_ip('192..1.2.'))
+        self.assertFalse(is_valid_ip('holy grenade'))
