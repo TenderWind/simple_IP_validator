@@ -1,6 +1,5 @@
 # coding: UTF-8
 
-
 from unittest.case import TestCase
 
 from simple_ip_validator import is_valid_ip
