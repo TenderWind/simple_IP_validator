@@ -2,22 +2,22 @@
 
 
 def is_valid_ip(ip_string):
-    result = False
+    max_octet_amount = 4
+    max_octet_value = 255
 
     ip_octets = ip_string.split('.')
 
-    if len(ip_octets) != 4:
-        return result
+    if len(ip_octets) != max_octet_amount:
+        return False
 
     for ip_octet in ip_octets:
         if not ip_octet.isdigit():
-            return result
+            return False
 
-        if len(ip_octet) > 1 and not int(ip_octet[0]):
-            return result
+        if len(ip_octet) > 1 and ip_octet.startswith('0'):
+            return False
 
-        if int(ip_octet) > 255:
-            return result
+        if int(ip_octet) > max_octet_value:
+            return False
 
-    result = True
-    return result
+    return True
